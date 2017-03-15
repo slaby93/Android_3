@@ -14,6 +14,11 @@ public class Calculator {
     TextView result1;
     TextView result2;
     TextView result3;
+    boolean finished;
+
+    Calculator() {
+        finished = false;
+    }
 
     public void setViews(TextView re0, TextView re1, TextView re2, TextView re3) {
 
@@ -25,6 +30,10 @@ public class Calculator {
 
 
     public void inputNumber(int number) {
+        if (finished) {
+            onAfterFinised();
+            return;
+        }
         if (number0 == null) {
             number0 = number;
             result2.setText(String.valueOf(number0));
@@ -58,6 +67,10 @@ public class Calculator {
     }
 
     public void addOperation(String op) {
+        if (finished) {
+            onAfterFinised();
+            return;
+        }
         if (operation == null) {
             System.out.println("[DEBUG] ADD OPERATION " + op);
             operation = op;
@@ -67,33 +80,15 @@ public class Calculator {
         return;
     }
 
-    public String getMath() {
-        String result = "";
+    public void onAfterFinised() {
 
-        if (number0 == null) {
-            return "";
-        }
-        result += number0 + " ";
-
-        if (operation == null) {
-            return result;
-        }
-        result += operation;
-        if (number1 == null) {
-            return result;
-        }
-        result += number1;
-        if (resultValue == null) {
-            return result;
-        }
-        result += " = " + resultValue;
-
-        return result;
     }
 
-
     public void equal() {
-
+        if (finished) {
+            onAfterFinised();
+            return;
+        }
         switch (operation) {
             case "+":
                 resultValue = (double) (number0 + number1);
@@ -110,11 +105,7 @@ public class Calculator {
         }
 
         result3.setText(" = " + String.valueOf(resultValue));
+        finished = true;
     }
-
-    public void reset() {
-
-    }
-
 
 }

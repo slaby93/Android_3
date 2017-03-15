@@ -10,11 +10,18 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
+                <uses-permission android:name="android.permission.VIBRATE" />
+
                 <action android:name="android.intent.action.MAIN" />
+                <uses-permission android:name="android.permission.VIBRATE" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <uses-permission android:name="android.permission.VIBRATE" />
+
         </activity>
+        <uses-permission android:name="android.permission.VIBRATE" />
     </application>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
 </manifest>
