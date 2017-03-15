@@ -80,6 +80,22 @@ public class Calculator {
         return;
     }
 
+    public void changeSign() {
+        if (number0 == null) {
+            return;
+        }
+        if (number0 != null && operation == null) {
+            number0 = -number0;
+            result2.setText(String.valueOf(number0));
+            return;
+        }
+        if (number0 != null && operation != null && number1 != null) {
+            number1 = -number1;
+            result2.setText(String.valueOf(number1));
+        }
+        System.out.println("CHANGE SIGN");
+    }
+
     public void onAfterFinised() {
 
     }

@@ -195,4 +195,15 @@
         android:onClick="resetCalculator"
         android:text="C" />
 
+    <Button
+        android:id="@+id/button24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/divide"
+        android:layout_alignBottom="@+id/divide"
+        android:layout_marginEnd="11dp"
+        android:layout_toStartOf="@+id/divide"
+        android:onClick="changeSing"
+        android:text="+/-" />
+
 </RelativeLayout>

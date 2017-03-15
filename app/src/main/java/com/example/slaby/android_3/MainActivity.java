@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    public void changeSing(View view){
+        c.changeSign();
+    }
 
     public void onOperation(View view) {
         if (c.finished) {
