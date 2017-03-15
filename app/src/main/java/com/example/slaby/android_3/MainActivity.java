@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     MainActivity() {
+
         c = new Calculator();
     }
 
@@ -18,13 +19,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView re0 = (TextView) findViewById(R.id.result0);
+        TextView re1 = (TextView) findViewById(R.id.result1);
+        TextView re2 = (TextView) findViewById(R.id.result2);
+        TextView re3 = (TextView) findViewById(R.id.result3);
+        c.setViews(re0, re1, re2, re3);
     }
 
     public void onNumberClick(View view) {
         Button thisButton = (Button) view;
         Integer inputedNumber = Integer.parseInt((String) thisButton.getText());
         c.inputNumber(inputedNumber);
-        updateResults();
 
     }
 
@@ -43,13 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 c.equal();
                 break;
         }
-        updateResults();
 
     }
 
-    public void updateResults() {
-        TextView result0 = (TextView) findViewById(R.id.result0);
-        result0.setText(c.getMath());
-    }
 
 }
