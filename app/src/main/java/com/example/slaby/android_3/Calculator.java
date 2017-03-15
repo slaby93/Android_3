@@ -109,8 +109,11 @@ public class Calculator {
                 break;
         }
 
-
         result3.setText(" = " + String.valueOf(resultValue));
+    }
+
+    public void reset() {
+
     }
 
 
